@@ -2,20 +2,19 @@
 
 namespace Chinour\Helpers\Api;
 
-use Parsedown;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 class ParsedownEndpoint
 {
+    use DocumentationRendererTrait;
+
     public function __invoke(Request $request): Response
     {
-        $parser = new Parsedown();
-
         if (($text = $request->request->get('text')) === null) {
-            $text = file_get_contents(__DIR__ . '/../../templates/parsedown.md');
+            return $this->getDocumentationResponse(file_get_contents(__DIR__ . '/../../templates/api/parsedown.md'));
         }
 
-        return new Response($parser->parse($text));
+        return new Response((new \Parsedown())->parse($text));
     }
 }

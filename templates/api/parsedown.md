@@ -1,11 +1,13 @@
-# Parsedown : Markdown to HTML
+# Parsedown
+
+> Endpoint to convert Markdown content to HTML.
 
 ## Usage
 
 Simply send a POST request to this endpoint with a text variable in body.
 
-```curl
-curl --location --request POST 'https://fathomless-reaches-93732.herokuapp.com/' \
+```bash
+curl --location --request POST '{{HOST_URL}}/parsedown' \
 --form 'text="#Title#
 Welcome to the demo:
 1. Write Markdown text on the left
@@ -13,3 +15,5 @@ Welcome to the demo:
 3. See the result to on the right
 "'
 ```
+
+[Back to home](/)

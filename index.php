@@ -2,12 +2,14 @@
 
 require_once 'vendor/autoload.php';
 
+use Chinour\Helpers\Api\HomeEndpoint;
 use Chinour\Helpers\Api\ParsedownEndpoint;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 $endpoints = [
-    '/' => new ParsedownEndpoint(),
+    '/' => new HomeEndpoint(),
+    '/parsedown' => new ParsedownEndpoint(),
 ];
 
 try {
