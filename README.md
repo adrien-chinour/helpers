@@ -7,7 +7,7 @@
 composer install
 
 # Local dev
-php -S localhost:9000 -f index.php
+php -S localhost:9000 -f web/index.php -t web/
 
 # Deploy to Heroku
 heroku create
@@ -15,4 +15,5 @@ git push heroku main
 ```
 
 ## Endpoints
-- `/`: [Parsedown](https://parsedown.org/) endpoint (POST)
+
+- `/parsedown`: [Parsedown](https://parsedown.org/) endpoint (POST)

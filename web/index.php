@@ -1,6 +1,6 @@
 <?php
 
-require_once 'vendor/autoload.php';
+require_once '../vendor/autoload.php';
 
 use Chinour\Helpers\Api\HomeEndpoint;
 use Chinour\Helpers\Api\ParsedownEndpoint;
