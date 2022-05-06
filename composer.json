@@ -1,9 +1,9 @@
 {
-    "name": "adrien/md-to-html",
+    "name": "chinour/helpers",
     "type": "project",
     "autoload": {
         "psr-4": {
-            "Adrien\\MdToHtml\\": "src/"
+            "Chinour\\Helpers\\": "src/"
         }
     },
     "authors": [
