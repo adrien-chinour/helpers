@@ -1,6 +1,6 @@
 <?php
 
-namespace Api;
+namespace Adrien\MdToHtml\Api;
 
 use Parsedown;
 use Symfony\Component\HttpFoundation\Request;
