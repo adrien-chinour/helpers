@@ -1,5 +1,7 @@
 <?php
 
+require_once 'vendor/autoload.php';
+
 use Symfony\Component\HttpFoundation\Request;
 
 try {
