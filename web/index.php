@@ -16,7 +16,7 @@ try {
     $request = Request::createFromGlobals();
     $endpoint = $endpoints[$request->getPathInfo()];
     $response = $endpoint !== null ? $endpoint($request) : new Response("<h1>404 not found :/</h1>", 404);
-    $response->headers->set('Access-Control-Allow-Origin', 'https://umami.chinour.dev');
+    $response->headers->set('Access-Control-Allow-Origin', ['https://umami.chinour.dev', 'https://ackee.chinour.dev']);
     $response->prepare($request)->send();
 } catch (Throwable $e) {
     echo $e->getMessage();
