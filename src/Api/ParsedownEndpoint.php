@@ -11,6 +11,11 @@ class ParsedownEndpoint
     public function __invoke(Request $request): Response
     {
         $parser = new Parsedown();
-        return new Response($parser->parse($request->request->get('text')));
+
+        if (($text = $request->request->get('text')) === null) {
+            $text = file_get_contents(__DIR__ . '/../../templates/parsedown.md');
+        }
+
+        return new Response($parser->parse($text));
     }
 }
