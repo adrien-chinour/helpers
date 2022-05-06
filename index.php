@@ -2,6 +2,10 @@
 
 use Symfony\Component\HttpFoundation\Request;
 
-$request = Request::createFromGlobals();
-$endpoint = new \Api\ParsedownEndpoint();
-$endpoint($request)->prepare($request)->send();
+try {
+    $request = Request::createFromGlobals();
+    $endpoint = new \Api\ParsedownEndpoint();
+    $endpoint($request)->prepare($request)->send();
+} catch (Throwable $e) {
+    echo $e->getMessage();
+}
