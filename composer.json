@@ -17,6 +17,7 @@
         "erusev/parsedown": "^1.7"
     },
     "require-dev": {
-        "symfony/var-dumper": "^6.1"
+        "symfony/var-dumper": "^6.1",
+        "filp/whoops": "^2.14"
     }
 }
