@@ -9,7 +9,6 @@ use Webmozart\Assert\Assert;
 class Color
 {
     /**
-     * @param string $hexadecimal
      * @return array<int>
      */
     public static function convertToRgb(string $hexadecimal): array

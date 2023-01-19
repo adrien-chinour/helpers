@@ -13,11 +13,8 @@ use Webmozart\Assert\Assert;
 class QRCodeGenerator
 {
     /**
-     * @param string $data
      * @param array<int> $color
-     * @param string|null $logo
      *
-     * @return string
      * @throws QRCodeDataException
      */
     public function generate(string $data, array $color = [0, 0, 0], ?string $logo = null): string

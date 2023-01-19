@@ -14,7 +14,7 @@ abstract class AbstractEndpoint
 
         $file = __DIR__ . '/../../' . $template;
 
-        if (!file_exists($file)) {
+        if (! file_exists($file)) {
             throw new \RuntimeException("Template $file not found.");
         }
 

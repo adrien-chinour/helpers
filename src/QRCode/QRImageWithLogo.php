@@ -7,17 +7,15 @@ namespace Chinour\Helpers\QRCode;
 use chillerlan\QRCode\Data\QRMatrix;
 use chillerlan\QRCode\Output\QRImage;
 use chillerlan\Settings\SettingsContainerInterface;
-use Chinour\Helpers\QRCode\Exception\RuntimeException;
 use Webmozart\Assert\Assert;
 
 class QRImageWithLogo extends QRImage
 {
     public function __construct(
-        protected LogoOptions      $logoOptions,
+        protected LogoOptions $logoOptions,
         SettingsContainerInterface $options,
-        QRMatrix                   $matrix
-    )
-    {
+        QRMatrix $matrix
+    ) {
         parent::__construct($options, $matrix);
     }
 
@@ -45,7 +43,7 @@ class QRImageWithLogo extends QRImage
         $ql = $this->matrix->size() * $this->options->scale;
 
         // scale the logo and copy it over. done!
-        imagecopyresampled($this->image, $logo, (int)(($ql - $lw) / 2), (int)(($ql - $lh) / 2), 0, 0, $lw, $lh, $w, $h);
+        imagecopyresampled($this->image, $logo, (int) (($ql - $lw) / 2), (int) (($ql - $lh) / 2), 0, 0, $lw, $lh, $w, $h);
 
         $imageData = $this->dumpImage();
 

@@ -13,7 +13,9 @@
         }
     ],
     "scripts": {
-        "phpstan": "vendor/bin/phpstan analyse --xdebug"
+        "phpstan": "vendor/bin/phpstan analyse --xdebug",
+        "ecsc": "vendor/bin/phpcs check src",
+        "ecsf": "vendor/bin/phpcs check src --fix"
     },
     "require": {
         "ext-gd": "*",
@@ -25,6 +27,7 @@
     "require-dev": {
         "symfony/var-dumper": "^6.1",
         "filp/whoops": "^2.14",
-        "phpstan/phpstan": "^1.9"
+        "phpstan/phpstan": "^1.9",
+        "symplify/easy-coding-standard": "11.2.2.72"
     }
 }

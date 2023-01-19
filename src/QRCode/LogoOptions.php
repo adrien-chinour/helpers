@@ -8,7 +8,8 @@ class LogoOptions
 {
     public function __construct(
         public readonly string $logo,
-        public readonly int    $logoSpaceWidth,
-        public readonly int    $logoSpaceHeight,
-    ) {}
+        public readonly int $logoSpaceWidth,
+        public readonly int $logoSpaceHeight,
+    ) {
+    }
 }

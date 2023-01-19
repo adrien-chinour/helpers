@@ -21,9 +21,9 @@ class QrCodeEndpoint extends AbstractEndpoint
 
         $qrcode = (new QRCodeGenerator())
             ->generate(
-                data: (string)$url,
-                color: Color::convertToRgb((string)$request->query->get('color', default: '#000000')),
-                logo: (string)$request->query->get('logo')
+                data: (string) $url,
+                color: Color::convertToRgb((string) $request->query->get('color', default: '#000000')),
+                logo: (string) $request->query->get('logo')
             );
 
         return new Response("<img src='$qrcode' alt='QR Code' width='800' height='800'/>");
