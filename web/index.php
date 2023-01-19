@@ -2,14 +2,14 @@
 
 require_once '../vendor/autoload.php';
 
-use Chinour\Helpers\Api\HomeEndpoint;
-use Chinour\Helpers\Api\ParsedownEndpoint;
+use Chinour\Helpers\Api as Api;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 $endpoints = [
-    '/' => new HomeEndpoint(),
-    '/parsedown' => new ParsedownEndpoint(),
+    '/' => new Api\HomeEndpoint(),
+    '/parsedown' => new Api\ParsedownEndpoint(),
+    '/qrcode' => new Api\QrCodeEndpoint(),
 ];
 
 // Initialize Whoops exception handler
