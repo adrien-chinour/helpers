@@ -6,6 +6,10 @@ namespace Chinour\Helpers\QRCode;
 
 class QRCode extends \chillerlan\QRCode\QRCode
 {
+    /**
+     * @param integer[] $color
+     * @return $this
+     */
     public function setColor(array $color): static
     {
         $this->options->moduleValues = [

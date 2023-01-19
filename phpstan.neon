@@ -1,0 +1,7 @@
+parameters:
+	level: 9
+	paths:
+		- src
+	ignoreErrors:
+	    -
+	        message: '#Access to an undefined property chillerlan\\Settings\\SettingsContainerInterface::\$[a-zA-Z0-9\\_]+#'

@@ -7,6 +7,8 @@ namespace Chinour\Helpers\QRCode;
 use chillerlan\QRCode\Data\QRMatrix;
 use chillerlan\QRCode\Output\QRImage;
 use chillerlan\Settings\SettingsContainerInterface;
+use Chinour\Helpers\QRCode\Exception\RuntimeException;
+use Webmozart\Assert\Assert;
 
 class QRImageWithLogo extends QRImage
 {
@@ -26,11 +28,14 @@ class QRImageWithLogo extends QRImage
         // there's no need to save the result of dump() into $this->image here
         parent::dump($file);
 
-        $im = imagecreatefrompng($this->logoOptions->logo);
+        $logo = imagecreatefrompng($this->logoOptions->logo);
+
+        Assert::isInstanceOf($logo, \GdImage::class);
+        Assert::isInstanceOf($this->image, \GdImage::class);
 
         // get logo image size
-        $w = imagesx($im);
-        $h = imagesy($im);
+        $w = imagesx($logo);
+        $h = imagesy($logo);
 
         // set new logo size, leave a border of 1 module (no proportional resize/centering)
         $lw = ($this->logoOptions->logoSpaceWidth - 2) * $this->options->scale;
@@ -40,7 +45,7 @@ class QRImageWithLogo extends QRImage
         $ql = $this->matrix->size() * $this->options->scale;
 
         // scale the logo and copy it over. done!
-        imagecopyresampled($this->image, $im, (int)(($ql - $lw) / 2), (int)(($ql - $lh) / 2), 0, 0, $lw, $lh, $w, $h);
+        imagecopyresampled($this->image, $logo, (int)(($ql - $lw) / 2), (int)(($ql - $lh) / 2), 0, 0, $lw, $lh, $w, $h);
 
         $imageData = $this->dumpImage();
 

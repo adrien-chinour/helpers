@@ -12,14 +12,19 @@
             "email": "git@chinour.fr"
         }
     ],
+    "scripts": {
+        "phpstan": "vendor/bin/phpstan analyse --xdebug"
+    },
     "require": {
         "ext-gd": "*",
         "symfony/http-foundation": "^6.0",
         "erusev/parsedown": "^1.7",
-        "chillerlan/php-qrcode": "^4.3"
+        "chillerlan/php-qrcode": "^4.3",
+        "webmozart/assert": "^1.11"
     },
     "require-dev": {
         "symfony/var-dumper": "^6.1",
-        "filp/whoops": "^2.14"
+        "filp/whoops": "^2.14",
+        "phpstan/phpstan": "^1.9"
     }
 }
