@@ -23,7 +23,7 @@ class QrCodeEndpoint extends AbstractEndpoint
             ->generate(
                 data: (string) $url,
                 color: Color::convertToRgb((string) $request->query->get('color', default: '#000000')),
-                logo: (string) $request->query->get('logo')
+                logo: $request->query->has('logo') ? (string) $request->query->get('logo') : null
             );
 
         return new Response("<img src='$qrcode' alt='QR Code' width='800' height='800'/>");
