@@ -3,6 +3,7 @@
 require_once '../vendor/autoload.php';
 
 use Chinour\Helpers\Api as Api;
+use Symfony\Component\HttpFoundation\JsonResponse;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
@@ -28,6 +29,10 @@ try {
     $response->prepare($request)->send();
 } catch (Throwable $exception) {
     $exceptionHandler?->handleException($exception);
-    (new Response("<h1>C cassé :(</h1>", 500))->prepare($request)->send();
+
+    $response = (new JsonResponse([
+        'exception' => $exception->getMessage(),
+    ]));
+    $response->prepare($request)->send();
 }
 

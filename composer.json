@@ -14,8 +14,8 @@
     ],
     "scripts": {
         "phpstan": "vendor/bin/phpstan analyse --xdebug",
-        "ecsc": "vendor/bin/phpcs check src",
-        "ecsf": "vendor/bin/phpcs check src --fix"
+        "ecsc": "vendor/bin/ecs check src",
+        "ecsf": "vendor/bin/ecs check src --fix"
     },
     "require": {
         "ext-gd": "*",
