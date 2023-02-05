@@ -3,6 +3,8 @@ name: Check Quality
 on:
     pull_request:
         branches: [ "main" ]
+    push:
+        branches: [ "*" ]
 
 permissions:
     contents: read
