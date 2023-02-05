@@ -17,5 +17,5 @@ jobs:
             -   uses: 'google-github-actions/auth@v1'
                 with:
                     workload_identity_provider: '/projects/298427231839/locations/global/workloadIdentityPools/helpers-api/providers/github'
-                    service_account: 'helpers-api-376915@helpers-api-376915.iam.gserviceaccount.com'
+                    service_account: 'app-engine-helpers-api@helpers-api-376915.iam.gserviceaccount.com'
             -   uses: 'google-github-actions/deploy-appengine@v1'
