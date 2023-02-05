@@ -24,9 +24,8 @@ abstract class AbstractEndpoint
             <html lang="en">
                 <head>
                     <title>{$this->title}</title>
+                    <link rel="icon" type="image/png" href="favicon.ico">
                     <link rel="stylesheet" href="/assets/retro.css">
-                    <script async defer data-website-id="a56ce918-a0fe-41f4-a344-4aebac8ca8c6" src="https://umami.chinour.dev/umami.js"></script>
-                    <script async src="https://ackee.chinour.dev/tracker.js" data-ackee-server="https://ackee.chinour.dev" data-ackee-domain-id="e4faf2bf-682d-438f-ae39-d79b9de5aaad"></script>
                 </head>
                 <body>$documentation</body>
             </html>

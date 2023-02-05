@@ -1,0 +1,16 @@
+# Configuration for Google App Engine
+runtime: php81
+
+service: helpers-api
+service_account: app-engine-helpers-api@helpers-api-376915.iam.gserviceaccount.com
+
+handlers:
+    -   url: /assets
+        static_dir: public/assets
+
+    -   url: /(.+\.(gif|png|jpg|ico))$
+        static_files: \1
+        upload: .+\.(gif|png|jpg|ico)$
+
+    -   url: .*
+        script: auto

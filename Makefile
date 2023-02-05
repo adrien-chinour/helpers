@@ -5,5 +5,5 @@ quality:
 	composer run-script ecsc
 
 release:
-	docker build . --file infra/Dockerfile --tag $(DOCKER_IMAGE)
+	docker build . --file docker/Dockerfile --tag $(DOCKER_IMAGE)
 	docker push $(DOCKER_IMAGE)

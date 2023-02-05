@@ -9,9 +9,9 @@ RUN curl -sSL https://github.com/mlocati/docker-php-extension-installer/releases
       zip \
       opcache
 
-COPY infra/apache2/default.conf /etc/apache2/sites-available/000-default.conf
+COPY docker/apache2/default.conf /etc/apache2/sites-available/000-default.conf
 
-COPY web/ web
+COPY public/ public
 COPY src/ src
 COPY templates/ templates
 

@@ -1,7 +1,5 @@
 # Helpers
 
-https://fathomless-reaches-93732.herokuapp.com/
-
 ## Usage
 
 ```shell
@@ -9,13 +7,10 @@ https://fathomless-reaches-93732.herokuapp.com/
 composer install
 
 # Local dev
-php -S localhost:9000 -f web/index.php -t web/
-
-# Deploy to Heroku
-heroku create
-git push heroku main
+php -S localhost:9000 -f public/index.php -t public/
 ```
 
 ## Endpoints
 
 - `/parsedown`: [Parsedown](https://parsedown.org/) endpoint (POST)
+- `/qrcode`: Generate QR Code (GET)

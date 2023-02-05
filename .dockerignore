@@ -1,0 +1,9 @@
+.github
+.gitignore
+.idea
+vendor
+app.yaml
+ecs.php
+Makefile
+phpstan.neon
+README.md

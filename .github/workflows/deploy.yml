@@ -1,0 +1,21 @@
+name: Deploy App Engine
+
+on:
+    push:
+        branches: [ "main" ]
+
+jobs:
+    deploy:
+        permissions:
+            contents: 'read'
+            id-token: 'write'
+
+        steps:
+            - id: 'auth'
+              uses: 'google-github-actions/auth@v1'
+              with:
+                  workload_identity_provider: '/projects/298427231839/locations/global/workloadIdentityPools/helpers-api/providers/github'
+                  service_account: 'helpers-api-376915@appspot.gserviceaccount.com'
+
+            - id: 'deploy'
+              uses: 'google-github-actions/deploy-appengine@v1'
